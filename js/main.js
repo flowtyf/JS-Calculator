@@ -102,7 +102,6 @@ let operator = '';
 let result = 0;
 let calculated = false;
 //Display current number and operator
-//TODO: stop parseInt from converting innertext to int
 //TODO: allow 1 number to equal whatever was input instead of undefined
 //TODO: convert btn if statements to switch for readability
 function updateDisplay(btn) {
@@ -128,7 +127,7 @@ function updateDisplay(btn) {
     firstNum = parseFloat(calcDisplay.innerText);
     operator = btn;
     opDisplay.innerText = btn;
-    calcDisplayTwo.innerText = parseInt(calcDisplay.innerText);
+    calcDisplayTwo.innerText = parseFloat(calcDisplay.innerText);
     calcDisplay.innerText = '';
   }
 
