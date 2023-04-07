@@ -17,3 +17,22 @@ const divide = (a, b) => {
   const divideTotal = a / b;
   return divideTotal;
 };
+
+let firstNumber;
+let secondNumber;
+let operator;
+
+const operate = (a, b, op) => {
+  if (a && b) {
+    switch (op) {
+      case '+':
+        return add(a, b);
+      case '-':
+        return subtract(a, b);
+      case 'x':
+        return multiply(a, b);
+      case '÷':
+        return divide(a, b);
+    }
+  }
+};
