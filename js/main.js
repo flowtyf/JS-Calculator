@@ -88,11 +88,11 @@ calcButtonContainer.appendChild(clearBtn);
 //Get all buttons and append event listener that returns button inner HTML
 const getAllButtons = document.getElementsByClassName('calc-btn');
 const allButtons = Array.from(getAllButtons);
+
 allButtons.forEach((button) =>
   button.addEventListener('click', () => {
     let buttonValue = button.innerHTML;
     updateDisplay(buttonValue);
-    return buttonValue;
   })
 );
 
