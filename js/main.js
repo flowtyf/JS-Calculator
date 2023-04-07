@@ -29,10 +29,6 @@ const appendNumbers = () => {
     calcNumber.id = `${i}-btn`;
     calcNumber.classList.add('calc-btn');
     calcNumber.innerHTML = `${i}`;
-    //TODO : add event listener to numbers
-    calcNumber.addEventListener('click', () => {
-      return calcNumber.innerHTML;
-    });
     calcButtonContainer.appendChild(calcNumber);
   }
 };
@@ -78,3 +74,13 @@ calcButtonContainer.appendChild(clearBtn);
 
 //Functions for display population
 // Append event listeners to every button? check innerHTML/text
+//TODO - change console log to return
+const getAllButtons = document.getElementsByClassName('calc-btn');
+const allButtons = Array.from(getAllButtons);
+
+allButtons.forEach((button) =>
+  button.addEventListener('click', () => {
+    console.log(button.innerHTML);
+    return button.innerHTML;
+  })
+);
