@@ -12,9 +12,22 @@ calcContainer.id = 'calc-container';
 document.body.appendChild(calcContainer);
 
 //Calculator Display
+
+const displayContainer = document.createElement('div');
+displayContainer.id = 'display-container';
+calcContainer.appendChild(displayContainer);
+
+const calcDisplayTwo = document.createElement('div');
+calcDisplayTwo.id = 'calc-display-two';
+displayContainer.appendChild(calcDisplayTwo);
+
+const opDisplay = document.createElement('div');
+opDisplay.id = 'operator-display';
+displayContainer.appendChild(opDisplay);
+
 const calcDisplay = document.createElement('div');
 calcDisplay.id = 'calc-display';
-calcContainer.appendChild(calcDisplay);
+displayContainer.appendChild(calcDisplay);
 
 //Calculator Buttons Container
 const calcButtonContainer = document.createElement('div');
@@ -34,6 +47,7 @@ const appendNumbers = () => {
 appendNumbers();
 
 //Operators and equals buttons
+//TODO - use a loop to create these buttons with less code
 
 const addBtn = document.createElement('button');
 addBtn.id = 'add-btn';
@@ -72,9 +86,7 @@ clearBtn.innerHTML = 'C';
 calcButtonContainer.appendChild(clearBtn);
 
 //Functions for display population
-let displayValue;
 //Get all buttons and append event listener that returns button inner HTML
-//TODO - change display value to increase until an operator is pressed
 const getAllButtons = document.getElementsByClassName('calc-btn');
 const allButtons = Array.from(getAllButtons);
 allButtons.forEach((button) =>
@@ -85,15 +97,55 @@ allButtons.forEach((button) =>
   })
 );
 
-//TODO update Display via the return value of button, add subdisplay for first/second num and operator
+//Initialize variables to store numbers and operator for operate function
+let firstNum = 0;
+let secondNum = 0;
+let operator = '';
+let calculated = false;
+//Display current number and operator
 function updateDisplay(btn) {
   const operators = ['+', '-', 'x', '÷'];
+  function clearDisplay() {
+    calcDisplay.innerText = '';
+    calcDisplayTwo.innerText = '';
+    opDisplay.innerText = '';
+  }
 
   if (btn <= 9) {
-    calcDisplay.innerText += `${btn}`;
-  } else if (operators.includes(btn)) {
-    calcDisplay.innerText = '';
-  } else if (btn === 'C') {
+    if (!calculated) {
+      calcDisplay.innerText += btn;
+    }
+    if (calculated) {
+      clearDisplay();
+      calculated = false;
+      calcDisplay.innerText += btn;
+    }
+  }
+
+  if (operators.includes(btn)) {
+    firstNum = parseInt(calcDisplay.innerText);
+    operator = btn;
+    opDisplay.innerText = btn;
+    calcDisplayTwo.innerText = parseInt(calcDisplay.innerText);
+    console.log(calcDisplayTwo.innerText);
     calcDisplay.innerText = '';
   }
+
+  if (btn === '=') {
+    secondNum = parseInt(calcDisplay.innerText);
+    clearDisplay();
+    calcDisplay.innerText = operate(firstNum, secondNum, operator);
+    firstNum = 0;
+    secondNum = 0;
+    calculated = true;
+  }
+
+  if (btn === 'C') {
+    clearDisplay();
+    calculated = false;
+    firstNum = 0;
+    secondNum = 0;
+  }
 }
+
+// main calculator function that uses operate function

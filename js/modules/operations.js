@@ -18,13 +18,9 @@ export function divide(a, b) {
   return divideTotal;
 }
 
-let firstNumber;
-let secondNumber;
-let operator;
-
-export function operate(a, b, op) {
+export function operate(a, b, operator) {
   if (a && b) {
-    switch (op) {
+    switch (operator) {
       case '+':
         return add(a, b);
       case '-':
