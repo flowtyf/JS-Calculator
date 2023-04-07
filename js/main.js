@@ -6,7 +6,6 @@ calcContainer.id = 'calc-container';
 document.body.appendChild(calcContainer);
 
 //Calculator Display
-
 const displayContainer = document.createElement('div');
 displayContainer.id = 'display-container';
 calcContainer.appendChild(displayContainer);
@@ -105,6 +104,7 @@ let calculated = false;
 //Display current number and operator
 //TODO: stop parseInt from converting innertext to int
 //TODO: allow 1 number to equal whatever was input instead of undefined
+//TODO: convert btn if statements to switch for readability
 function updateDisplay(btn) {
   const operators = ['+', '-', 'x', '÷'];
   function clearDisplay() {
@@ -146,6 +146,8 @@ function updateDisplay(btn) {
     calculated = false;
     firstNum = 0;
     secondNum = 0;
+    operator = '';
+    result = 0;
   }
 }
 
