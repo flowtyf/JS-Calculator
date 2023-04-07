@@ -6,6 +6,7 @@ document.body.appendChild(calcContainer);
 //Calculator Display
 const calcDisplay = document.createElement('div');
 calcDisplay.id = 'calc-display';
+calcDisplay.innerText = '13333337';
 calcContainer.appendChild(calcDisplay);
 
 //Calculator Buttons Container
