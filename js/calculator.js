@@ -17,8 +17,8 @@ calcContainer.appendChild(calcButtonContainer);
 const appendNumbers = () => {
   for (let i = 0; i <= 9; i++) {
     const calcNumber = document.createElement('button');
-    calcNumber.id = `${i}-button`;
-    calcNumber.classList.add('calc-button');
+    calcNumber.id = `${i}-btn`;
+    calcNumber.classList.add('calc-btn');
     calcNumber.innerHTML = `${i}`;
     calcButtonContainer.appendChild(calcNumber);
   }
@@ -27,26 +27,38 @@ appendNumbers();
 
 //Operators and equals buttons
 
-const addButton = document.createElement('button');
-addButton.id = 'add-button';
-addButton.classList.add('calc-button');
-addButton.innerHTML = '+';
-calcButtonContainer.appendChild(addButton);
+const addBtn = document.createElement('button');
+addBtn.id = 'add-btn';
+addBtn.classList.add('calc-btn');
+addBtn.innerHTML = '+';
+calcButtonContainer.appendChild(addBtn);
 
-const subButton = document.createElement('button');
-subButton.id = 'sub-button';
-subButton.classList.add('calc-button');
-subButton.innerHTML = '-';
-calcButtonContainer.appendChild(subButton);
+const subBtn = document.createElement('button');
+subBtn.id = 'sub-btn';
+subBtn.classList.add('calc-btn');
+subBtn.innerHTML = '-';
+calcButtonContainer.appendChild(subBtn);
 
-const multButton = document.createElement('button');
-multButton.id = 'mult-button';
-multButton.classList.add('calc-button');
-multButton.innerHTML = 'x';
-calcButtonContainer.appendChild(multButton);
+const multBtn = document.createElement('button');
+multBtn.id = 'mult-btn';
+multBtn.classList.add('calc-btn');
+multBtn.innerHTML = 'x';
+calcButtonContainer.appendChild(multBtn);
 
-const divButton = document.createElement('button');
-divButton.id = 'div-button';
-divButton.classList.add('calc-button');
-divButton.innerHTML = '÷';
-calcButtonContainer.appendChild(divButton);
+const divBtn = document.createElement('button');
+divBtn.id = 'div-btn';
+divBtn.classList.add('calc-btn');
+divBtn.innerHTML = '÷';
+calcButtonContainer.appendChild(divBtn);
+
+const equBtn = document.createElement('button');
+equBtn.id = 'equ-btn';
+equBtn.classList.add('calc-btn');
+equBtn.innerHTML = '=';
+calcButtonContainer.appendChild(equBtn);
+
+const clearBtn = document.createElement('button');
+clearBtn.id = 'clear-btn';
+clearBtn.classList.add('calc-btn');
+clearBtn.innerHTML = 'C';
+calcButtonContainer.appendChild(clearBtn);
