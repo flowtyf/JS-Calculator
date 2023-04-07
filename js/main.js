@@ -1,10 +1,4 @@
-import {
-  add,
-  subtract,
-  multiply,
-  divide,
-  operate,
-} from './modules/operations.js';
+import { operate } from './modules/operations.js';
 
 //Calculator body
 const calcContainer = document.createElement('div');
@@ -36,13 +30,18 @@ calcContainer.appendChild(calcButtonContainer);
 
 //Calculator Numbers
 const appendNumbers = () => {
-  for (let i = 0; i <= 9; i++) {
+  for (let i = 1; i <= 9; i++) {
     const calcNumber = document.createElement('button');
     calcNumber.id = `${i}-btn`;
     calcNumber.classList.add('calc-btn');
     calcNumber.innerHTML = `${i}`;
     calcButtonContainer.appendChild(calcNumber);
   }
+  const calcNumber0 = document.createElement('button');
+  calcNumber0.id = `0-btn`;
+  calcNumber0.classList.add('calc-btn');
+  calcNumber0.innerHTML = 0;
+  calcButtonContainer.appendChild(calcNumber0);
 };
 appendNumbers();
 
