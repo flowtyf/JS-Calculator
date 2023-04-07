@@ -100,8 +100,11 @@ allButtons.forEach((button) =>
 let firstNum = 0;
 let secondNum = 0;
 let operator = '';
+let result = 0;
 let calculated = false;
 //Display current number and operator
+//TODO: stop parseInt from converting innertext to int
+//TODO: allow 1 number to equal whatever was input instead of undefined
 function updateDisplay(btn) {
   const operators = ['+', '-', 'x', '÷'];
   function clearDisplay() {
@@ -122,21 +125,20 @@ function updateDisplay(btn) {
   }
 
   if (operators.includes(btn)) {
-    firstNum = parseInt(calcDisplay.innerText);
+    firstNum = parseFloat(calcDisplay.innerText);
     operator = btn;
     opDisplay.innerText = btn;
     calcDisplayTwo.innerText = parseInt(calcDisplay.innerText);
-    console.log(calcDisplayTwo.innerText);
     calcDisplay.innerText = '';
   }
 
   if (btn === '=') {
-    secondNum = parseInt(calcDisplay.innerText);
+    secondNum = parseFloat(calcDisplay.innerText);
     clearDisplay();
-    calcDisplay.innerText = operate(firstNum, secondNum, operator);
-    firstNum = 0;
+    result = operate(firstNum, secondNum, operator);
+    calcDisplay.innerText = result;
+    firstNum = result;
     secondNum = 0;
-    calculated = true;
   }
 
   if (btn === 'C') {
