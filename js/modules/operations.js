@@ -1,28 +1,28 @@
-const add = (a, b) => {
+export function add(a, b) {
   const addTotal = a + b;
   return addTotal;
-};
+}
 
-const subtract = (a, b) => {
+export function subtract(a, b) {
   const subtractTotal = a - b;
   return subtractTotal;
-};
+}
 
-const multiply = (a, b) => {
+export function multiply(a, b) {
   const multiplyTotal = a * b;
   return multiplyTotal;
-};
+}
 
-const divide = (a, b) => {
+export function divide(a, b) {
   const divideTotal = a / b;
   return divideTotal;
-};
+}
 
 let firstNumber;
 let secondNumber;
 let operator;
 
-const operate = (a, b, op) => {
+export function operate(a, b, op) {
   if (a && b) {
     switch (op) {
       case '+':
@@ -35,4 +35,4 @@ const operate = (a, b, op) => {
         return divide(a, b);
     }
   }
-};
+}

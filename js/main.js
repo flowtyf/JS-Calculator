@@ -1,3 +1,11 @@
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+  operate,
+} from './modules/operations.js';
+
 //Calculator body
 const calcContainer = document.createElement('div');
 calcContainer.id = 'calc-container';
@@ -21,6 +29,10 @@ const appendNumbers = () => {
     calcNumber.id = `${i}-btn`;
     calcNumber.classList.add('calc-btn');
     calcNumber.innerHTML = `${i}`;
+    //TODO : add event listener to numbers
+    calcNumber.addEventListener('click', () => {
+      return calcNumber.innerHTML;
+    });
     calcButtonContainer.appendChild(calcNumber);
   }
 };
@@ -63,3 +75,6 @@ clearBtn.id = 'clear-btn';
 clearBtn.classList.add('calc-btn');
 clearBtn.innerHTML = 'C';
 calcButtonContainer.appendChild(clearBtn);
+
+//Functions for display population
+// Append event listeners to every button? check innerHTML/text
