@@ -14,7 +14,6 @@ document.body.appendChild(calcContainer);
 //Calculator Display
 const calcDisplay = document.createElement('div');
 calcDisplay.id = 'calc-display';
-calcDisplay.innerText = '13333337';
 calcContainer.appendChild(calcDisplay);
 
 //Calculator Buttons Container
@@ -73,14 +72,28 @@ clearBtn.innerHTML = 'C';
 calcButtonContainer.appendChild(clearBtn);
 
 //Functions for display population
-// Append event listeners to every button? check innerHTML/text
-//TODO - change console log to return
+let displayValue;
+//Get all buttons and append event listener that returns button inner HTML
+//TODO - change display value to increase until an operator is pressed
 const getAllButtons = document.getElementsByClassName('calc-btn');
 const allButtons = Array.from(getAllButtons);
-
 allButtons.forEach((button) =>
   button.addEventListener('click', () => {
-    console.log(button.innerHTML);
-    return button.innerHTML;
+    let buttonValue = button.innerHTML;
+    updateDisplay(buttonValue);
+    return buttonValue;
   })
 );
+
+//TODO update Display via the return value of button, add subdisplay for first/second num and operator
+function updateDisplay(btn) {
+  const operators = ['+', '-', 'x', '÷'];
+
+  if (btn <= 9) {
+    calcDisplay.innerText += `${btn}`;
+  } else if (operators.includes(btn)) {
+    calcDisplay.innerText = '';
+  } else if (btn === 'C') {
+    calcDisplay.innerText = '';
+  }
+}
