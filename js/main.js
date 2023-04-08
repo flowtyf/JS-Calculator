@@ -57,14 +57,13 @@ function updateDisplay(btn) {
   }
 
   if (btn === '=') {
-    secondNum = parseFloat(calcDisplay.innerText);
-    clearDisplay();
-    result = operate(firstNum, secondNum, operator);
-    firstOp = false;
-    if (result === undefined) {
+    if (result === undefined && operator === '÷') {
       calcDisplay.innerText =
         'What if I told you that, despite what you may have learned in school, you can divide by zero if you just think of it in the right way? And what if the answer you get not only had real-world significance, but could actually explain why other parts of math work the way they do? If you’re not afraid to question what you’ve been told, and you’re willing to be flexible with math, then read onward to discover…';
-    } else calcDisplay.innerText = result;
+    } else secondNum = parseFloat(calcDisplay.innerText);
+    clearDisplay();
+    result = operate(firstNum, secondNum, operator);
+    calcDisplay.innerText = result;
   }
 
   if (btn === 'C') {
