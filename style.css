@@ -6,7 +6,9 @@ body {
   background-color: hsl(0, 0%, 42%);
 }
 h1 {
-  color: #1fc742;
+  color: #0b2447;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
 #calc-container {
