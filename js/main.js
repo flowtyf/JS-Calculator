@@ -62,7 +62,9 @@ function updateDisplay(btn) {
         'What if I told you that, despite what you may have learned in school, you can divide by zero if you just think of it in the right way? And what if the answer you get not only had real-world significance, but could actually explain why other parts of math work the way they do? If you’re not afraid to question what you’ve been told, and you’re willing to be flexible with math, then read onward to discover…';
     } else secondNum = parseFloat(calcDisplay.innerText);
     clearDisplay();
+    firstOp = false;
     result = operate(firstNum, secondNum, operator);
+    firstNum = result;
     calcDisplay.innerText = result;
   }
 
@@ -73,6 +75,11 @@ function updateDisplay(btn) {
     secondNum = 0;
     operator = '';
     result = 0;
+  }
+
+  if (btn === '⬅') {
+    let trim = calcDisplay.innerText.slice(0, -1);
+    calcDisplay.innerText = trim;
   }
 }
 
