@@ -59,3 +59,9 @@ button:active {
   color: #1fc742;
   background-color: #005118;
 }
+
+a {
+  color: black;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
