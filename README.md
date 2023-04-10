@@ -1,10 +1,10 @@
 # JS-Calculator
 
-A basic calculator made in JavaScript, HTML, and CSS.
+A calculator made in JavaScript, HTML, and CSS.
 
 ## Features
 
-- Addition, subtraction, multiplication, and division.
+- Basic addition, subtraction, multiplication, and division.
 - A backspace button that works for the current number.
 - A clear button!
 - Lovely UI with some simple sounds on button press.
@@ -15,9 +15,11 @@ A basic calculator made in JavaScript, HTML, and CSS.
 
 ## Acknowledgements
 
-[The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator) for this project and their awesome course.
+What an awesome project this was to make. I spent a few days on it, refactoring code and shuffling things around as needed. My code got a bit messy towards the end, and I would love to clean it up once I have some more experience. 
 
-Big thank you to these users at freesound.org for supplying some great UI sounds:
-[Mellau](https://freesound.org/people/Mellau/sounds/506053/)
-[EminYILDRIM](https://freesound.org/people/EminYILDIRIM/sounds/536108/)
-[MATRIXXX\_](https://freesound.org/people/MATRIXXX_/sounds/657946/)
+Thanks to the team at [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator) for pointers on this project and their awesome course.
+
+Thank you to these users at freesound.org for supplying some great UI sounds:
+- [Mellau](https://freesound.org/people/Mellau/sounds/506053/)
+- [EminYILDRIM](https://freesound.org/people/EminYILDIRIM/sounds/536108/)
+- [MATRIXXX\_](https://freesound.org/people/MATRIXXX_/sounds/657946/) 
