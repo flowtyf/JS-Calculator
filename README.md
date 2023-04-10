@@ -20,6 +20,6 @@ What an awesome project this was to make. I spent a few days on it, refactoring 
 Thanks to the team at [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator) for pointers on this project and their awesome course.
 
 Thank you to these users at freesound.org for supplying some great UI sounds:
-[Mellau](https://freesound.org/people/Mellau/sounds/506053/)
-[EminYILDRIM](https://freesound.org/people/EminYILDIRIM/sounds/536108/)
-[MATRIXXX\_](https://freesound.org/people/MATRIXXX_/sounds/657946/)
+[Mellau](https://freesound.org/people/Mellau/sounds/506053/), 
+[EminYILDRIM](https://freesound.org/people/EminYILDIRIM/sounds/536108/), 
+[MATRIXXX\_](https://freesound.org/people/MATRIXXX_/sounds/657946/), 
