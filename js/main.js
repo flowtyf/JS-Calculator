@@ -48,44 +48,53 @@ function updateDisplay(btn) {
     result = 0;
   }
 
-  if (btn <= 9) {
-    calcDisplay.innerText += btn;
-    uiSound.currentTime = 0;
-    uiSound.play();
-  }
-
-  if (calcDisplay.innerText !== '') {
-    if (operators.includes(btn)) {
-      if (firstOp === false) {
-        uiSound.currentTime = 0;
-        uiSound.play();
-        firstOp = true;
-        firstNum = parseFloat(calcDisplay.innerText);
-        operator = btn;
-        opDisplay.innerText = btn;
-        calcDisplayTwo.innerText = parseFloat(calcDisplay.innerText);
-        calcDisplay.innerText = '';
-      } else if (firstOp === true) {
-        uiBeep.currentTime = 0;
-        uiBeep.play();
-        secondNum = parseFloat(calcDisplay.innerText);
-        result = operate(firstNum, secondNum, operator);
-        operator = btn;
-        firstNum = result;
-        opDisplay.innerText = btn;
-        calcDisplayTwo.innerText = result;
-        calcDisplay.innerText = '';
-      }
+  if (calcDisplay.innerText !== 'thats a no from me dawg...') {
+    if (btn <= 9) {
+      calcDisplay.innerText += btn;
+      uiSound.currentTime = 0;
+      uiSound.play();
     }
 
-    if (btn === '=' && calcDisplayTwo.innerText !== '') {
-      uiBeep.play();
-      secondNum = parseFloat(calcDisplay.innerText);
-      clearDisplay();
-      firstOp = false;
-      result = operate(firstNum, secondNum, operator);
-      firstNum = result;
-      calcDisplay.innerText = result;
+    if (calcDisplay.innerText !== '') {
+      if (operators.includes(btn)) {
+        if (firstOp === false) {
+          uiSound.currentTime = 0;
+          uiSound.play();
+          firstOp = true;
+          firstNum = parseFloat(calcDisplay.innerText);
+          operator = btn;
+          opDisplay.innerText = btn;
+          calcDisplayTwo.innerText = parseFloat(calcDisplay.innerText);
+          calcDisplay.innerText = '';
+        } else if (firstOp === true) {
+          uiBeep.currentTime = 0;
+          uiBeep.play();
+          secondNum = parseFloat(calcDisplay.innerText);
+          result = operate(firstNum, secondNum, operator);
+          operator = btn;
+          firstNum = result;
+          if (result === undefined) {
+            clearCalc();
+            calcDisplay.innerText = 'thats a no from me dawg...';
+          } else if (typeof result === 'number') opDisplay.innerText = btn;
+          calcDisplayTwo.innerText = result;
+          calcDisplay.innerText = '';
+        }
+      }
+
+      if (btn === '=' && calcDisplayTwo.innerText !== '') {
+        uiBeep.play();
+        secondNum = parseFloat(calcDisplay.innerText);
+        clearDisplay();
+        firstOp = false;
+        result = operate(firstNum, secondNum, operator);
+        if (result === undefined) {
+          calcDisplay.innerText = 'thats a no from me dawg...';
+        } else if (typeof result === 'number') {
+          firstNum = result;
+          calcDisplay.innerText = result;
+        }
+      }
     }
   }
 
