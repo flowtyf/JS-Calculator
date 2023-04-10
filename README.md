@@ -11,7 +11,7 @@ A basic calculator made in JavaScript, HTML, and CSS.
 
 ## Live Demo
 
-[JS Calculator]()
+[JS Calculator](https://flowtyf.github.io/JS-Calculator/)
 
 ## Acknowledgements
 
