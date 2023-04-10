@@ -13,14 +13,11 @@ A basic calculator made in JavaScript, HTML, and CSS.
 
 [JS Calculator]()
 
-#### Acknowledgements
+## Acknowledgements
 
 [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator) for this project and their awesome course.
 
 Big thank you to these users at freesound.org for supplying some great UI sounds:
 [Mellau](https://freesound.org/people/Mellau/sounds/506053/)
 [EminYILDRIM](https://freesound.org/people/EminYILDIRIM/sounds/536108/)
-[MATRIXXX_](https://freesound.org/people/MATRIXXX_/sounds/657946/)
-
-
-
+[MATRIXXX\_](https://freesound.org/people/MATRIXXX_/sounds/657946/)
