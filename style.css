@@ -13,7 +13,7 @@ h1 {
 #calc-container {
   display: flex;
   flex-wrap: wrap;
-  width: 380px;
+  width: 290px;
   border: 2px solid;
   padding: 10px;
   border-radius: 5px;
@@ -25,7 +25,7 @@ h1 {
 }
 .calc-btn {
   aspect-ratio: 1 / 1;
-  width: 70px;
+  width: 65px;
   border: 1px solid;
   border-radius: 5px;
   font-size: 1.8rem;
@@ -54,7 +54,7 @@ button:active {
   height: 100px;
   border: 1px solid black;
   padding: 10px;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   margin-bottom: 5px;
   color: #1fc742;
   background-color: #005118;
@@ -64,4 +64,35 @@ a {
   color: black;
   font-size: 3rem;
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  #display-container {
+    font-size: 1.8rem;
+  }
+
+  .calc-btn {
+    aspect-ratio: 1 / 1;
+    width: 70px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    margin: 3px;
+    background-color: #a5d7e8;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+  #calc-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 380px;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0b2447;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
 }
